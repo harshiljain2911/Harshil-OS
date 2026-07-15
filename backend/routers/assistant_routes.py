@@ -29,7 +29,7 @@ from collections import OrderedDict
 from typing import AsyncIterator, List
 
 import httpx
-from fastapi import APIRouter, Body, Request
+from fastapi import APIRouter, Request
 from fastapi.responses import StreamingResponse
 from slowapi import Limiter
 from slowapi.util import get_remote_address
@@ -515,7 +515,7 @@ def _log_call(ip: str, provider: str, model: str, started: float, stats: dict, e
 
 @router.post("", response_model=AssistantResponse)
 @limiter.limit("10/minute;60/hour")
-async def ask(request: Request, payload: AssistantRequest = Body(...)) -> AssistantResponse:
+async def ask(request: Request, payload: AssistantRequest) -> AssistantResponse:
     ip = get_remote_address(request)
     logger.info("assistant.request ip=%s session=%s q_len=%d", ip, payload.session_id, len(payload.question))
 
@@ -547,7 +547,7 @@ async def ask(request: Request, payload: AssistantRequest = Body(...)) -> Assist
 
 @router.post("/stream")
 @limiter.limit("10/minute;60/hour")
-async def ask_stream(request: Request, payload: AssistantRequest = Body(...)) -> StreamingResponse:
+async def ask_stream(request: Request, payload: AssistantRequest) -> StreamingResponse:
     """SSE: citations → delta* → done (error event only after partial output)."""
     ip = get_remote_address(request)
     logger.info("assistant.stream ip=%s session=%s q_len=%d", ip, payload.session_id, len(payload.question))

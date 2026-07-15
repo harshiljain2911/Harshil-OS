@@ -32,7 +32,7 @@ import secrets
 import time
 from pathlib import Path
 
-from fastapi import APIRouter, Body, Depends, HTTPException, Request, UploadFile
+from fastapi import APIRouter, Depends, HTTPException, Request, UploadFile
 from pydantic import BaseModel, Field
 from slowapi import Limiter
 from slowapi.util import get_remote_address
@@ -119,7 +119,7 @@ class LoginPayload(BaseModel):
 
 @router.post("/login")
 @login_limiter.limit("5/minute")
-async def login(request: Request, payload: LoginPayload = Body(...)) -> dict:
+async def login(request: Request, payload: LoginPayload) -> dict:
     configured = os.environ.get("ADMIN_PASSWORD")
     if not configured:
         raise HTTPException(status_code=503, detail="Admin panel is not configured")
@@ -210,7 +210,7 @@ class AISettingsPayload(BaseModel):
 
 
 @router.put("/ai-settings", dependencies=[Depends(require_admin)])
-async def put_ai_settings(payload: AISettingsPayload = Body(...)) -> dict:
+async def put_ai_settings(payload: AISettingsPayload) -> dict:
     """Persist provider/model choices into site.json (no API keys here).
     Takes effect immediately — the assistant reads it live per request."""
     from routers.assistant_routes import _api_key
@@ -355,7 +355,7 @@ async def get_site_raw() -> dict:
 
 
 @router.put("/site", dependencies=[Depends(require_admin)])
-async def put_site(data: dict = Body(...)) -> dict:
+async def put_site(data: dict) -> dict:
     try:
         parsed = Site(**data)
     except Exception as e:
@@ -400,7 +400,7 @@ async def admin_get(collection: str, slug: str) -> dict:
 
 
 @router.post("/content/{collection}", dependencies=[Depends(require_admin)])
-async def admin_create(collection: str, payload: ContentPayload = Body(...)) -> dict:
+async def admin_create(collection: str, payload: ContentPayload) -> dict:
     _check_collection(collection)
     data = _validate(collection, payload.data)
     slug = data.get("slug", "")
@@ -417,7 +417,7 @@ async def admin_create(collection: str, payload: ContentPayload = Body(...)) -> 
 
 
 @router.put("/content/{collection}/{slug}", dependencies=[Depends(require_admin)])
-async def admin_update(collection: str, slug: str, payload: ContentPayload = Body(...)) -> dict:
+async def admin_update(collection: str, slug: str, payload: ContentPayload) -> dict:
     _check_collection(collection)
     found = _find(collection, slug)
     if not found:
@@ -442,7 +442,7 @@ async def admin_update(collection: str, slug: str, payload: ContentPayload = Bod
 
 
 @router.post("/content/{collection}/{slug}/status", dependencies=[Depends(require_admin)])
-async def admin_set_status(collection: str, slug: str, body: dict = Body(...)) -> dict:
+async def admin_set_status(collection: str, slug: str, body: dict) -> dict:
     """Move an item between published / draft / archived."""
     _check_collection(collection)
     target = body.get("status")
