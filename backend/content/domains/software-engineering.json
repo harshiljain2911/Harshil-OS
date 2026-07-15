@@ -1,0 +1,49 @@
+{
+  "slug": "software-engineering",
+  "name": "Software Engineering",
+  "tagline": "",
+  "overview": "",
+  "philosophy": null,
+  "status": "active",
+  "skills": [],
+  "technologies": [],
+  "focus_areas": [],
+  "subtopics": [
+    {
+      "slug": "full-stack-development",
+      "name": "Full-Stack Development",
+      "summary": null
+    },
+    {
+      "slug": "frontend",
+      "name": "Frontend",
+      "summary": null
+    },
+    {
+      "slug": "backend",
+      "name": "Backend",
+      "summary": null
+    },
+    {
+      "slug": "apis",
+      "name": "APIs",
+      "summary": null
+    }
+  ],
+  "learning_journey": [],
+  "future_roadmap": [],
+  "highlight_project_slugs": [],
+  "icon": null,
+  "cover_image": null,
+  "theme_color": null,
+  "gallery": [],
+  "tools": [],
+  "libraries": [],
+  "hardware": [],
+  "software": [],
+  "external_links": [],
+  "featured_quote": null,
+  "key_takeaways": [],
+  "metrics": [],
+  "updated_at": "2026-07-05"
+}

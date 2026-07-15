@@ -1,0 +1,44 @@
+{
+  "slug": "robotics-iot",
+  "name": "Robotics & IoT",
+  "tagline": "",
+  "overview": "",
+  "philosophy": null,
+  "status": "active",
+  "skills": [],
+  "technologies": [],
+  "focus_areas": [],
+  "subtopics": [
+    {
+      "slug": "robotics",
+      "name": "Robotics",
+      "summary": null
+    },
+    {
+      "slug": "iot",
+      "name": "IoT",
+      "summary": null
+    },
+    {
+      "slug": "edge-ai",
+      "name": "Edge AI",
+      "summary": null
+    }
+  ],
+  "learning_journey": [],
+  "future_roadmap": [],
+  "highlight_project_slugs": [],
+  "icon": null,
+  "cover_image": null,
+  "theme_color": null,
+  "gallery": [],
+  "tools": [],
+  "libraries": [],
+  "hardware": [],
+  "software": [],
+  "external_links": [],
+  "featured_quote": null,
+  "key_takeaways": [],
+  "metrics": [],
+  "updated_at": "2026-07-05"
+}

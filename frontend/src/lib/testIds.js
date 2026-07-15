@@ -1,0 +1,86 @@
+// Stable data-testid registry — kebab-case, role-based.
+export const T = {
+  nav: {
+    root: "nav-root",
+    link: (slug) => `nav-link-${slug}`,
+    terminalTrigger: "nav-terminal-trigger",
+    assistantTrigger: "nav-assistant-trigger",
+    recruiterExit: "nav-recruiter-exit",
+  },
+  home: {
+    hero: "home-hero",
+    heroCta: "home-hero-cta",
+    heroCtaProjects: "home-hero-cta-projects",
+    step: (i) => `home-step-${i}`,
+    domainsBlock: "home-domains-block",
+    projectsBlock: "home-projects-block",
+    dashboardBlock: "home-dashboard-block",
+    contactCta: "home-contact-cta",
+  },
+  domain: {
+    grid: "domains-grid",
+    card: (slug) => `domain-card-${slug}`,
+    detail: (slug) => `domain-detail-${slug}`,
+  },
+  project: {
+    grid: "projects-grid",
+    card: (slug) => `project-card-${slug}`,
+    detail: (slug) => `project-detail-${slug}`,
+    filter: (name) => `project-filter-${name}`,
+    filterInput: "project-filter-input",
+    depthScore: "project-depth-score",
+  },
+  blog: {
+    list: "blog-list",
+    card: (slug) => `blog-card-${slug}`,
+    post: (slug) => `blog-post-${slug}`,
+  },
+  contact: {
+    form: "contact-form",
+    name: "contact-name",
+    email: "contact-email",
+    subject: "contact-subject",
+    message: "contact-message",
+    submit: "contact-submit",
+    success: "contact-success",
+    error: "contact-error",
+  },
+  terminal: {
+    overlay: "terminal-overlay",
+    input: "terminal-input",
+    output: "terminal-output",
+    close: "terminal-close",
+  },
+  assistant: {
+    launcher: "assistant-launcher",
+    drawer: "assistant-drawer",
+    input: "assistant-input",
+    send: "assistant-send",
+    close: "assistant-close",
+    state: "assistant-state",
+    message: (i) => `assistant-message-${i}`,
+    citation: (i, j) => `assistant-citation-${i}-${j}`,
+    suggestion: (i) => `assistant-suggestion-${i}`,
+  },
+  dashboard: {
+    root: "mission-control",
+    widget: (name) => `mc-widget-${name}`,
+  },
+  recruiter: {
+    banner: "recruiter-banner",
+    exit: "recruiter-exit",
+  },
+  developer: {
+    tree: "dev-folder-tree",
+    repoCard: (slug) => `dev-repo-${slug}`,
+    decisionCard: (slug) => `dev-decision-${slug}`,
+  },
+  resume: {
+    downloadPdf: "resume-download-pdf",
+  },
+  notFound: {
+    root: "not-found",
+    homeLink: "not-found-home",
+    projectsLink: "not-found-projects",
+  },
+};

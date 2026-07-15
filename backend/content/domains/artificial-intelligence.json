@@ -1,0 +1,44 @@
+{
+  "slug": "artificial-intelligence",
+  "name": "Artificial Intelligence",
+  "tagline": "",
+  "overview": "",
+  "philosophy": null,
+  "status": "active",
+  "skills": [],
+  "technologies": [],
+  "focus_areas": [],
+  "subtopics": [
+    {
+      "slug": "ai-agents",
+      "name": "AI Agents",
+      "summary": null
+    },
+    {
+      "slug": "computer-vision",
+      "name": "Computer Vision",
+      "summary": null
+    },
+    {
+      "slug": "machine-learning",
+      "name": "Machine Learning",
+      "summary": null
+    }
+  ],
+  "learning_journey": [],
+  "future_roadmap": [],
+  "highlight_project_slugs": [],
+  "icon": null,
+  "cover_image": null,
+  "theme_color": null,
+  "gallery": [],
+  "tools": [],
+  "libraries": [],
+  "hardware": [],
+  "software": [],
+  "external_links": [],
+  "featured_quote": null,
+  "key_takeaways": [],
+  "metrics": [],
+  "updated_at": "2026-07-05"
+}

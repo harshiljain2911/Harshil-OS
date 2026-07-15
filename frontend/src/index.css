@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Dark by default — this is the OS. Light mode is not shipped. */
+        --background: 0 0% 3%;
+        --foreground: 0 0% 95%;
+        --card: 0 0% 6%;
+        --card-foreground: 0 0% 95%;
+        --popover: 0 0% 6%;
+        --popover-foreground: 0 0% 95%;
+        --primary: 15 100% 50%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 0 0% 15%;
+        --secondary-foreground: 0 0% 95%;
+        --muted: 0 0% 12%;
+        --muted-foreground: 0 0% 65%;
+        --accent: 220 100% 50%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 100% 50%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 0 0% 20%;
+        --input: 0 0% 15%;
+        --ring: 15 100% 50%;
+        --radius: 0rem;
+        --terminal-green: 135 100% 50%;
+        --grid-line: 0 0% 10%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    /* Full-height chain so the app shell (public site) can own a single
+       internal scroll container instead of the window — this is what lets the
+       portfolio and the assistant scroll fully independently (ChatGPT-style).
+       Overflow stays visible here so the /admin route keeps normal page scroll;
+       the public Shell clips itself with `overflow-hidden`. */
+    html, body, #root {
+        height: 100%;
+    }
+    html {
+        color-scheme: dark;
+    }
+    body {
+        @apply bg-background text-foreground font-mono antialiased;
+        font-feature-settings: "ss01", "cv02", "cv11";
+    }
+    ::selection {
+        background: hsl(var(--primary));
+        color: hsl(var(--primary-foreground));
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: hsl(var(--background)); }
+    ::-webkit-scrollbar-thumb { background: hsl(var(--border)); }
+    ::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary)); }
+}
+
+/* Navbar responsiveness is driven by the CONTENT COLUMN width, not the viewport,
+   so opening the Ask OS push panel (which shrinks the column) collapses the nav
+   to a hamburger instead of overflowing. */
+.app-main-col { container-type: inline-size; }
+.nav-desktop { display: none; }
+.nav-collapsed { display: flex; }
+/* Show the full nav only once the content column can actually fit all items
+   (they collapse to a hamburger below this — including when Ask OS is open). */
+@container (min-width: 1160px) {
+    .nav-desktop { display: flex; }
+    .nav-collapsed { display: none; }
+    .nav-menu-panel { display: none !important; }
+}
+
+@layer utilities {
+    .grid-lines {
+        background-image:
+            linear-gradient(hsl(var(--grid-line)) 1px, transparent 1px),
+            linear-gradient(90deg, hsl(var(--grid-line)) 1px, transparent 1px);
+        background-size: 48px 48px;
+    }
+    .noise {
+        position: relative;
+    }
+    .noise::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.04;
+        mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.6'/></svg>");
+    }
+    .hard-shadow {
+        box-shadow: 4px 4px 0px 0px hsl(var(--primary));
+    }
+    .hard-shadow-hover {
+        transition: box-shadow 120ms ease-out, transform 120ms ease-out;
+    }
+    .hard-shadow-hover:hover {
+        box-shadow: 4px 4px 0px 0px hsl(var(--primary));
+        transform: translate(-2px, -2px);
+    }
+    .kbd {
+        @apply inline-flex items-center justify-center border border-border bg-muted px-1.5 py-0.5 text-[10px] uppercase tracking-widest text-muted-foreground;
+    }
+    .eyebrow {
+        @apply text-xs font-mono tracking-[0.24em] uppercase text-muted-foreground;
+    }
+    .mono-data {
+        @apply font-mono text-sm tracking-widest uppercase;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
+}
+
+/* Print: clean, ink-friendly output — chrome hidden, content only. */
+@media print {
+    header,
+    footer,
+    [data-testid="assistant-launcher"],
+    [data-testid="nav-root"] {
+        display: none !important;
+    }
+    body {
+        background: #fff !important;
+        color: #000 !important;
+    }
+    main {
+        padding: 0 !important;
+        max-width: 100% !important;
+    }
+    article,
+    .bg-card {
+        background: #fff !important;
+        border-color: #ddd !important;
+        color: #000 !important;
+    }
+    a {
+        color: #000 !important;
+        text-decoration: none !important;
+    }
+    .text-muted-foreground,
+    .text-primary,
+    .mono-data,
+    .eyebrow {
+        color: #333 !important;
+    }
+}

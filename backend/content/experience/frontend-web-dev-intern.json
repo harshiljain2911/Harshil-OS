@@ -1,0 +1,33 @@
+{
+  "slug": "frontend-web-dev-intern",
+  "role": "Frontend Web Developer Intern",
+  "org": "AIMargdarshak",
+  "start": "Jun 2026",
+  "end": "Jul 2026",
+  "location": "Remote",
+  "summary": "Worked as a Frontend Web Developer Intern at AIMargdarshak, building responsive and user-friendly web interfaces using modern frontend technologies. Collaborated on real-world product features, converted UI designs into production-ready components, integrated backend APIs, optimized application performance, and contributed to delivering a scalable, maintainable user experience.",
+  "highlights": [
+    "Responsive UI Development",
+    "Reusable React Components",
+    "API Integration",
+    "Performance Optimization",
+    "Cross-Browser Compatibility",
+    "Git Collaboration",
+    "Production Deployment"
+  ],
+  "stack": [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Shadcn UI",
+    "REST APIs",
+    "Axios",
+    "Git",
+    "GitHub",
+    "Vercel"
+  ],
+  "domain_slugs": [
+    "software-engineering"
+  ]
+}

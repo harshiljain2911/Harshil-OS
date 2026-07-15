@@ -1,0 +1,397 @@
+{
+  "identity": {
+    "full_name": "Harshil Jain",
+    "display_name": "Harshil",
+    "brand_name": "Harshil/OS",
+    "brand_suffix": "OS",
+    "brand_slug": "harshil-os",
+    "tagline": "An engineer's operating system",
+    "one_liner": "Circuits, code, and the space between them.",
+    "positioning_statement": "Building intelligent systems across software, embedded engineering, and AI — from first principles to production.",
+    "professional_headline": "Embedded Systems • Software Engineering • Artificial Intelligence",
+    "current_status": "B.Tech ECE Student @ LNMIIT Jaipur",
+    "institution": "The LNM Institute of Information Technology (LNMIIT), Jaipur",
+    "education_summary": "B.Tech, Electronics & Communication Engineering — 5th Semester · CGPA 7.79",
+    "primary_focus_areas": [
+      "Software Engineering",
+      "Embedded Systems",
+      "Artificial Intelligence",
+      "Electronics Engineering",
+      "Robotics & IoT"
+    ],
+    "current_interests": [
+      "Data Structures & Algorithms",
+      "Software Engineering",
+      "Full-Stack Development",
+      "Embedded Systems",
+      "Computer Vision",
+      "Edge AI",
+      "Robotics"
+    ],
+    "recruiter_summary": "Engineering student building scalable software, intelligent systems, and embedded solutions with a strong focus on quality, documentation, and real-world impact.",
+    "developer_summary": "Focused on building reliable engineering systems with clean architecture, maintainable code, thoughtful documentation, and an emphasis on understanding fundamentals before implementation.",
+    "role_title": "Electronics & Communication Engineering Undergraduate",
+    "role_subtitle": "Software Engineering • Embedded Systems • Artificial Intelligence"
+  },
+  "hero": {
+    "badge": "v1.0 • Booting",
+    "headline_line2": "Built once.",
+    "headline_line3": "Understood completely.",
+    "subhead": "Building intelligent systems across software, embedded engineering, and AI—from first principles to production.",
+    "cta_primary_label": "See Projects",
+    "cta_secondary_label": "Terminal",
+    "cta_tertiary_label": "",
+    "stat_focus_value": "Intelligent Systems",
+    "stat_modes_value": "Recruiter • Developer"
+  },
+  "about": {
+    "eyebrow": "/about",
+    "title": "Engineer DNA",
+    "subtitle": "How I think, build, and grow as an engineer.",
+    "bio_paragraphs": [
+      "I am an Electronics and Communication Engineering undergraduate at LNMIIT Jaipur who enjoys building complete engineering systems. My interests span software engineering, embedded systems, artificial intelligence, and electronics, with a focus on understanding how these disciplines work together rather than in isolation."
+    ],
+    "facts": [
+      {
+        "label": "Location",
+        "value": "Jaipur, Rajasthan, India"
+      },
+      {
+        "label": "Education",
+        "value": "B.Tech ECE, LNMIIT Jaipur"
+      },
+      {
+        "label": "Current Focus",
+        "value": "Software Engineering, AI & Embedded Systems"
+      },
+      {
+        "label": "Open To",
+        "value": "Software Engineering & AI Internships"
+      },
+      {
+        "label": "Interests",
+        "value": "Problem Solving, Robotics & System Design"
+      },
+      {
+        "label": "Currently Learning",
+        "value": "Computer Vision, Edge AI"
+      }
+    ]
+  },
+  "narrative": {
+    "positioning": "Harshil Jain is a systems-focused engineer who builds complete products across software, embedded systems, and artificial intelligence. Rather than specializing in a single layer of the stack, he enjoys understanding how hardware, software, and intelligence work together to solve real engineering problems—from first principles to production.",
+    "professional_summary": "Electronics & Communication Engineering undergraduate at LNMIIT Jaipur with a multidisciplinary focus spanning software engineering, embedded systems, and artificial intelligence. Passionate about designing production-ready systems through strong engineering fundamentals, practical implementation, and continuous learning.",
+    "career_mission": "Build intelligent systems that seamlessly integrate hardware, software, and artificial intelligence while continuously learning, documenting, and contributing to meaningful engineering solutions.",
+    "philosophy": {
+      "title": "Understand the Whole System",
+      "body": "I believe engineering problems rarely belong to a single discipline. A hardware bug can surface as a software issue, and an AI system is only as reliable as the software and hardware beneath it. Rather than treating these layers separately, I enjoy understanding the complete system before building or optimizing individual components."
+    },
+    "core_values": [
+      {
+        "label": "Consistency",
+        "evidence": "Years of JEE preparation — the same routine, repeated until it paid off (95.83 percentile, JEE Main)."
+      },
+      {
+        "label": "Discipline",
+        "evidence": "The Kota years: structured preparation from Class XI through JEE Advanced (AIR 23142)."
+      },
+      {
+        "label": "Learning",
+        "evidence": "DSA, OS, DBMS, and system design alongside a full ECE course load."
+      },
+      {
+        "label": "Problem Solving",
+        "evidence": "Active on LeetCode, Codeforces, and HackerRank."
+      },
+      {
+        "label": "Leadership",
+        "evidence": "Creative Lead, ASME EFx 2026."
+      },
+      {
+        "label": "Creativity",
+        "evidence": "Creative Lead for ASME EFx 2026; member of the Capriccio Music Club."
+      },
+      {
+        "label": "Curiosity",
+        "evidence": "Robotics, quantum computing, and music clubs — joined all three."
+      },
+      {
+        "label": "Teamwork",
+        "evidence": "Phoenix Robotics, QBit Quantum Computing, Capriccio — all collaborative by nature."
+      }
+    ],
+    "differentiators": [
+      "Builds complete systems across hardware, software, and AI.",
+      "Every project is backed by code, documentation, demonstrations, or measurable outcomes.",
+      "Treats documentation with the same importance as implementation.",
+      "Focused on understanding and owning the entire engineering lifecycle—from design to deployment."
+    ],
+    "short_bio": "Electronics & Communication Engineering undergraduate building production-ready software, embedded systems, and AI solutions with a systems-first engineering mindset.",
+    "long_bio": [
+      "Harshil Jain is a B.Tech Electronics & Communication Engineering student at LNMIIT, Jaipur — fifth semester, 7.79 CGPA, 95.83 percentile at JEE Main. He works across three areas: embedded hardware (PCB design, FPGA, microcontrollers, robotics), full-stack development (React, Next.js, Node.js, MongoDB), and applied AI (computer vision, AI agents).",
+      "That range comes with results: a Frontend Developer internship at AIMargdarshak, Creative Lead for ASME EFx 2026, and hackathon placements at Smart India Hackathon, Samsung Solve for Tomorrow, Flipkart GRID 8.0, and Cognee Hangover AI. Certified in PCB Design (Altium, LNMIIT) and Embedded Systems (LNMIIT).",
+      "Long term, he wants to own products fully — the hardware and the software — rather than one piece of either."
+    ]
+  },
+  "education": [
+    {
+      "school": "The LNM Institute of Information Technology (LNMIIT), Jaipur",
+      "degree": "Bachelor of Technology",
+      "field": "Electronics & Communication Engineering",
+      "start": "2024",
+      "end": "2028 (Expected)",
+      "location": "Jaipur, Rajasthan, India",
+      "summary": "Electronics & Communication Engineering undergraduate with a multidisciplinary focus on Software Engineering, Embedded Systems, Artificial Intelligence, and Robotics. Passionate about building production-ready engineering systems through strong fundamentals, hands-on projects, and continuous learning.",
+      "cgpa": "7.79",
+      "coursework": [
+        "Data Structures & Algorithms",
+        "Operating Systems",
+        "Database Management Systems",
+        "Computer Networks",
+        "Object-Oriented Programming",
+        "Software Engineering",
+        "Digital Electronics",
+        "Microprocessors & Microcontrollers",
+        "Embedded Systems",
+        "Signals & Systems",
+        "Probability & Statistics"
+      ],
+      "achievements": [
+        "Creative Lead - ASME EFx 2026",
+        "Member - Phoenix Robotics Club",
+        "Member - Capriccio Music Club",
+        "Member - QBit Quantum Computing Club"
+      ],
+      "related_project_slugs": [
+        "harshil-os",
+        "supportpilot"
+      ]
+    },
+    {
+      "school": "Lord Buddha Public School, Kota",
+      "degree": "Class XII",
+      "field": "Science (PCM)",
+      "start": "2022",
+      "end": "2024",
+      "location": "Kota, Rajasthan, India",
+      "summary": "Completed senior secondary education with a strong foundation in Mathematics and Physics while preparing for national engineering entrance examinations.",
+      "cgpa": null,
+      "coursework": [],
+      "achievements": [
+        "95.83 Percentile - JEE Main",
+        "Qualified JEE Advanced (AIR 23142)"
+      ],
+      "related_project_slugs": []
+    },
+    {
+      "school": "MSS Public School, Kishangarh",
+      "degree": "Class X",
+      "field": null,
+      "start": "2020",
+      "end": "2022",
+      "location": "Kishangarh, Rajasthan, India",
+      "summary": "Completed secondary education with distinction and developed an early interest in engineering, technology, and problem solving.",
+      "cgpa": null,
+      "coursework": [],
+      "achievements": [
+        "95.40%"
+      ],
+      "related_project_slugs": []
+    }
+  ],
+  "contact": {
+    "email": "kotaharshil2906@gmail.com",
+    "phone": "+91 9829011410",
+    "location": "Jaipur, Rajasthan, India",
+    "page_eyebrow": "/ contact",
+    "page_title": "Let's Connect",
+    "page_subtitle": "Open to internships, engineering collaborations, open-source projects, and meaningful conversations."
+  },
+  "social": {
+    "github": "https://github.com/harshiljain2911",
+    "linkedin": "https://www.linkedin.com/in/harshil-jain-543940317/",
+    "twitter": null,
+    "email": "mailto:kotaharshil2906@gmail.com",
+    "leetcode": "https://leetcode.com/u/harshiljain2911/",
+    "codeforces": "https://codeforces.com/profile/harshiljain2911",
+    "hackerrank": "https://www.hackerrank.com/harshiljain2911"
+  },
+  "resume": {
+    "file_url": "/uploads/resumes/Harshil_resume-9eafdbbf.pdf",
+    "files": [],
+    "download_mode": "print",
+    "role_line": "Engineering Across Hardware, Software & AI"
+  },
+  "seo": {
+    "default_title_suffix": "Harshil Jain Portfolio",
+    "default_description": "Harshil Jain is an Electronics & Communication Engineering undergraduate at LNMIIT Jaipur building production-ready software, embedded systems, and AI solutions. Explore projects, certifications, engineering domains, research, and technical achievements.",
+    "keywords": [
+      "Harshil Jain",
+      "Harshil/OS",
+      "Harshil Jain Portfolio",
+      "Electronics & Communication Engineering",
+      "Software Engineering",
+      "Full Stack Development",
+      "Embedded Systems",
+      "Artificial Intelligence",
+      "Intelligent Systems",
+      "React",
+      "Next.js",
+      "FastAPI",
+      "Python",
+      "C++",
+      "Data Structures and Algorithms",
+      "Computer Vision",
+      "Edge AI",
+      "Robotics",
+      "PCB Design",
+      "FPGA",
+      "ESP32",
+      "Engineering Portfolio",
+      "LNMIIT Jaipur"
+    ],
+    "site_url": null,
+    "og_image_default": null
+  },
+  "footer": {
+    "tagline": "An engineer's operating system. Built on first principles. Designed for real-world systems.",
+    "copyright_name": "Harshil / OS"
+  },
+  "favicon": {
+    "url": null
+  },
+  "profile_image": {
+    "url": null,
+    "alt": null
+  },
+  "nav": {
+    "primary": [
+      {
+        "label": "Domains",
+        "to": "/domains"
+      },
+      {
+        "label": "Projects",
+        "to": "/projects"
+      },
+      {
+        "label": "Resume",
+        "to": "/resume"
+      },
+      {
+        "label": "Certifications",
+        "to": "/certifications"
+      },
+      {
+        "label": "Achievements",
+        "to": "/achievements"
+      },
+      {
+        "label": "Education",
+        "to": "/education"
+      },
+      {
+        "label": "Experience",
+        "to": "/experience"
+      },
+      {
+        "label": "Contact",
+        "to": "/contact"
+      }
+    ],
+    "recruiter": [
+      {
+        "label": "Projects",
+        "to": "/projects"
+      },
+      {
+        "label": "Experience",
+        "to": "/experience"
+      },
+      {
+        "label": "Certifications",
+        "to": "/certifications"
+      },
+      {
+        "label": "Contact",
+        "to": "/contact"
+      }
+    ],
+    "footer_columns": [
+      {
+        "title": "Explore",
+        "links": [
+          {
+            "label": "Domains",
+            "to": "/domains"
+          },
+          {
+            "label": "Projects",
+            "to": "/projects"
+          },
+          {
+            "label": "Blog",
+            "to": "/blog"
+          }
+        ]
+      },
+      {
+        "title": "Chronology",
+        "links": [
+          {
+            "label": "Education",
+            "to": "/education"
+          },
+          {
+            "label": "Experience",
+            "to": "/experience"
+          },
+          {
+            "label": "Achievements",
+            "to": "/achievements"
+          },
+          {
+            "label": "Certifications",
+            "to": "/certifications"
+          },
+          {
+            "label": "Timeline",
+            "to": "/timeline"
+          }
+        ]
+      },
+      {
+        "title": "Modes",
+        "links": [
+          {
+            "label": "Recruiter Mode",
+            "to": "/recruiter"
+          },
+          {
+            "label": "Developer Mode",
+            "to": "/developer"
+          },
+          {
+            "label": "Contact",
+            "to": "/contact"
+          }
+        ]
+      }
+    ]
+  },
+  "recruiter": {
+    "eyebrow": "/ recruiter mode",
+    "title": "Why Hire Me?",
+    "subtitle": "Every project, achievement, certification, and experience on this portfolio is backed by code, documentation, demonstrations, or measurable results—not marketing.",
+    "next_step_eyebrow": "/ next step",
+    "next_step_title": "Let's Start a Conversation.",
+    "pitch": "I enjoy solving engineering problems that span more than one discipline. My work combines software engineering, embedded systems, and artificial intelligence to build complete, production-oriented solutions rather than isolated components.\n\nAlongside my academic journey at LNMIIT Jaipur, I have gained practical experience through internships, engineering projects, hackathons, and technical certifications. Every claim on this portfolio is supported by working code, documentation, demonstrations, or measurable outcomes.\n\nIf you're looking for someone who learns quickly, takes ownership, and enjoys building complete engineering systems from first principles to production, I'd love to contribute to your team."
+  },
+  "developer": {
+    "mode_summary": "I build software the same way I build engineering systems—starting from first principles, prioritizing maintainability, documenting decisions, and treating architecture as seriously as implementation."
+  },
+  "ai": {
+    "provider": "openrouter",
+    "model": "anthropic/claude-sonnet-4"
+  }
+}

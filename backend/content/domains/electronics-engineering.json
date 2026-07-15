@@ -1,0 +1,39 @@
+{
+  "slug": "electronics-engineering",
+  "name": "Electronics Engineering",
+  "tagline": "",
+  "overview": "",
+  "philosophy": null,
+  "status": "active",
+  "skills": [],
+  "technologies": [],
+  "focus_areas": [],
+  "subtopics": [
+    {
+      "slug": "pcb-design",
+      "name": "PCB Design",
+      "summary": null
+    },
+    {
+      "slug": "vlsi",
+      "name": "VLSI",
+      "summary": null
+    }
+  ],
+  "learning_journey": [],
+  "future_roadmap": [],
+  "highlight_project_slugs": [],
+  "icon": null,
+  "cover_image": null,
+  "theme_color": null,
+  "gallery": [],
+  "tools": [],
+  "libraries": [],
+  "hardware": [],
+  "software": [],
+  "external_links": [],
+  "featured_quote": null,
+  "key_takeaways": [],
+  "metrics": [],
+  "updated_at": "2026-07-05"
+}
