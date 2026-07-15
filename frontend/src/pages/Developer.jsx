@@ -42,7 +42,7 @@ const folderTree = (brandSlug) => `${brandSlug}/
 
 const STACK = [
   "React 19", "React Router 7", "Tailwind CSS 3.4", "Framer Motion 11",
-  "React Query 5", "react-pdf (pdf.js)", "react-snap (prerender)",
+  "React Query 5", "react-pdf (pdf.js)",
   "FastAPI", "Pydantic v2", "MongoDB (Motor)", "Pillow (OG images)",
   "SlowAPI (rate limiting)", "OpenRouter (assistant)",
 ];
