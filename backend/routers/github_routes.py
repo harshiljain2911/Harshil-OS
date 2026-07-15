@@ -14,14 +14,12 @@ from typing import Any, List
 
 import httpx
 from fastapi import APIRouter
-from motor.motor_asyncio import AsyncIOMotorClient
+
+from db import get_db
 
 logger = logging.getLogger("github")
 
 router = APIRouter(prefix="/github", tags=["github"])
-
-_client = AsyncIOMotorClient(os.environ["MONGO_URL"], serverSelectionTimeoutMS=2000)
-_db = _client[os.environ["DB_NAME"]]
 
 CACHE_TTL_SECONDS = 3600
 
@@ -70,31 +68,35 @@ async def get_repos() -> dict[str, Any]:
             and (now - _MEM_CACHE["at"]).total_seconds() < CACHE_TTL_SECONDS):
         return {"user": user, "repos": _MEM_CACHE["repos"], "cached_at": _MEM_CACHE["at"].isoformat()}
 
-    # 2. Optional Mongo cache (skipped gracefully if unavailable).
-    try:
-        cache = await _db.github_cache.find_one({"user": user})
-        if cache and cache.get("cached_at"):
-            cached_at = cache["cached_at"]
-            if isinstance(cached_at, str):
-                cached_at = datetime.fromisoformat(cached_at.replace("Z", "+00:00"))
-            if cached_at.tzinfo is None:
-                cached_at = cached_at.replace(tzinfo=timezone.utc)
-            if now - cached_at < timedelta(seconds=CACHE_TTL_SECONDS):
-                _MEM_CACHE.update(user=user, repos=cache.get("repos", []), at=cached_at)
-                return {"user": user, "repos": cache.get("repos", []), "cached_at": cached_at.isoformat()}
-    except Exception:
-        logger.info("github.cache_unavailable — fetching live")
+    # 2. Optional Mongo cache (skipped gracefully if Mongo isn't configured or
+    #    is unavailable). MongoDB is entirely optional.
+    db = get_db()
+    if db is not None:
+        try:
+            cache = await db.github_cache.find_one({"user": user})
+            if cache and cache.get("cached_at"):
+                cached_at = cache["cached_at"]
+                if isinstance(cached_at, str):
+                    cached_at = datetime.fromisoformat(cached_at.replace("Z", "+00:00"))
+                if cached_at.tzinfo is None:
+                    cached_at = cached_at.replace(tzinfo=timezone.utc)
+                if now - cached_at < timedelta(seconds=CACHE_TTL_SECONDS):
+                    _MEM_CACHE.update(user=user, repos=cache.get("repos", []), at=cached_at)
+                    return {"user": user, "repos": cache.get("repos", []), "cached_at": cached_at.isoformat()}
+        except Exception:
+            logger.info("github.cache_unavailable — fetching live")
 
     # 3. Live fetch from GitHub.
     repos = await _fetch_repos(user)
     if repos:
         _MEM_CACHE.update(user=user, repos=repos, at=now)
-        try:
-            await _db.github_cache.update_one(
-                {"user": user},
-                {"$set": {"user": user, "repos": repos, "cached_at": now.isoformat()}},
-                upsert=True,
-            )
-        except Exception:
-            pass
+        if db is not None:
+            try:
+                await db.github_cache.update_one(
+                    {"user": user},
+                    {"$set": {"user": user, "repos": repos, "cached_at": now.isoformat()}},
+                    upsert=True,
+                )
+            except Exception:
+                pass
     return {"user": user, "repos": repos, "cached_at": now.isoformat()}

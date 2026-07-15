@@ -2,15 +2,14 @@ from __future__ import annotations
 
 import json
 import logging
-import os
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 
 from fastapi import APIRouter, HTTPException, Request
-from motor.motor_asyncio import AsyncIOMotorClient
 from slowapi import Limiter
 from slowapi.util import get_remote_address
 
+from db import get_db
 from email_transport import transport as email_transport
 from models import ContactSubmission, ContactSubmissionCreate
 
@@ -19,10 +18,7 @@ logger = logging.getLogger("contact")
 router = APIRouter(prefix="/contact", tags=["contact"])
 limiter = Limiter(key_func=get_remote_address)
 
-_client = AsyncIOMotorClient(os.environ["MONGO_URL"], serverSelectionTimeoutMS=1500)
-_db = _client[os.environ["DB_NAME"]]
-
-# Durable local fallback so a submission is never lost, even if both the email
+# Durable local fallback so a submission is never lost, even when both the email
 # provider and the database are unavailable. Append-only JSONL.
 _FALLBACK_FILE = Path(__file__).parent.parent / "contact_submissions.jsonl"
 
@@ -52,6 +48,7 @@ async def submit_contact(request: Request, payload: ContactSubmissionCreate) -> 
     doc["created_at"] = doc["created_at"].isoformat() if isinstance(doc["created_at"], datetime) else str(doc["created_at"])
     doc["ip"] = get_remote_address(request)
 
+    # 1. Primary delivery: email via Resend (works with no database at all).
     email_ok = False
     if email_transport.enabled:
         try:
@@ -63,14 +60,19 @@ async def submit_contact(request: Request, payload: ContactSubmissionCreate) -> 
             logger.exception("contact.email_failed")
     doc["email_sent"] = email_ok
 
+    # 2. Optional storage: MongoDB if configured, else skipped. Mongo is lazily
+    #    initialized and entirely optional — its absence never breaks the form.
     stored = False
-    try:
-        await _db.contact_submissions.insert_one(dict(doc))
-        stored = True
-    except Exception:
-        logger.exception("contact.store_failed")
+    db = get_db()
+    if db is not None:
+        try:
+            await db.contact_submissions.insert_one(dict(doc))
+            stored = True
+        except Exception:
+            logger.exception("contact.store_failed")
 
-    # Always capture the message durably so nothing is ever lost.
+    # 3. Durable fallback: if it wasn't stored in a database, append to the local
+    #    JSONL file so the message is never lost.
     filed = _append_fallback(doc) if not stored else False
 
     if not (email_ok or stored or filed):
