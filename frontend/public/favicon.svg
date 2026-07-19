@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Harshil/OS">
+  <rect width="512" height="512" rx="112" fill="#0A0A0A"/>
+  <g fill="#FF4000">
+    <rect x="150" y="132" width="64" height="248"/>
+    <rect x="298" y="132" width="64" height="248"/>
+    <rect x="150" y="224" width="212" height="64"/>
+  </g>
+</svg>
