@@ -22,7 +22,7 @@ Vercel (frontend)  ──►  Railway/Render (backend /api)  ──►  MongoDB 
    uvicorn server:app --host 0.0.0.0 --port $PORT
    ```
 6. Add the environment variables (see table below).
-7. Deploy. Note the public URL (e.g. `https://harshil-os-backend.up.railway.app`).
+7. Deploy, then attach your custom domain. In production this is `https://api.harshiljain.online` (Railway also gives a `*.up.railway.app` URL you can use until the domain is set).
 
 ### Option B — Render
 
@@ -39,7 +39,7 @@ Vercel (frontend)  ──►  Railway/Render (backend /api)  ──►  MongoDB 
 |---|---|---|
 | `ADMIN_PASSWORD` | ✅ | Admin login |
 | `ADMIN_JWT_SECRET` | ✅ | Long random string |
-| `CORS_ORIGINS` | ✅ | Your frontend URL, e.g. `https://harshil-os.vercel.app` |
+| `CORS_ORIGINS` | ✅ | Your frontend URL, e.g. `https://harshiljain.online` |
 | `OPENROUTER_API_KEY` / `OPENAI_API_KEY` / `GEMINI_API_KEY` | ⚠️ one | Valid **and funded** for LLM mode |
 | `RESEND_API_KEY`, `RESEND_TO`, `RESEND_FROM` | ✅ (email) | `RESEND_FROM` must be a verified sender/domain |
 | `PORTFOLIO_GITHUB_USER` | ✅ | Repos on the Developer page |
@@ -60,9 +60,9 @@ Vercel (frontend)  ──►  Railway/Render (backend /api)  ──►  MongoDB 
 4. **Environment variable:**
    | Variable | Value |
    |---|---|
-   | `REACT_APP_BACKEND_URL` | your backend URL, e.g. `https://harshil-os-backend.up.railway.app` |
-5. Deploy. Vercel gives you `https://<project>.vercel.app`.
-6. Go back to the backend and set `CORS_ORIGINS` to that Vercel URL, then redeploy the backend.
+   | `REACT_APP_BACKEND_URL` | your backend URL, e.g. `https://api.harshiljain.online` |
+5. Deploy, then attach your custom domain. In production the frontend is `https://harshiljain.online` (Vercel also gives a `*.vercel.app` URL until the domain is set).
+6. Go back to the backend and set `CORS_ORIGINS` to the frontend origin (`https://harshiljain.online`), then redeploy the backend.
 
 > The build runs `react-snap` (postbuild) to prerender routes. If a host's headless Chrome can't run it, remove the `postbuild` script — the app still works as a normal SPA.
 

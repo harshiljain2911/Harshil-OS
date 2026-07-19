@@ -4,8 +4,11 @@
 
 ### An engineering portfolio built like a product — a black/orange "operating system" for showcasing real work.
 
-Full-stack portfolio platform with a headless JSON CMS, an admin panel, a grounded AI assistant with multi-provider fallback, live GitHub integration, and production email — all wrapped in a deliberate industrial design language.
+Full-stack portfolio platform with a headless CMS, an admin panel, a grounded AI assistant with multi-provider fallback, live GitHub integration, and production email — all wrapped in a deliberate industrial design language.
 
+**🔗 Live:** [harshiljain.online](https://harshiljain.online) &nbsp;·&nbsp; **API:** [api.harshiljain.online](https://api.harshiljain.online)
+
+[![Live](https://img.shields.io/badge/Live-harshiljain.online-FF4000)](https://harshiljain.online)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.139-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
@@ -120,7 +123,7 @@ Full annotated tree: [`docs/Folder-Structure.md`](docs/Folder-Structure.md).
 **Prerequisites:** Node 18+, Python 3.11+, (optional) MongoDB.
 
 ```bash
-git clone https://github.com/<your-username>/Harshil-OS.git
+git clone https://github.com/harshiljain2911/Harshil-OS.git
 cd Harshil-OS
 ```
 
@@ -177,9 +180,11 @@ Upload and organize images, resume PDFs, and other assets from the admin; files 
 
 ## Deployment
 
-- **Frontend → Vercel** (static build of `frontend/`)
-- **Backend → Railway or Render** (`uvicorn server:app`)
-- **Database → MongoDB Atlas** (optional)
+Live in production:
+
+- **Frontend → Vercel** — [https://harshiljain.online](https://harshiljain.online)
+- **Backend → Railway** (`uvicorn server:app`) — [https://api.harshiljain.online](https://api.harshiljain.online)
+- **Database → PostgreSQL / MongoDB Atlas** (optional)
 
 Step-by-step, with every required env var: [`docs/Deployment.md`](docs/Deployment.md).
 
