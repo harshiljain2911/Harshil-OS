@@ -459,7 +459,7 @@ def _stream_llm(provider: str, key: str, messages: list[dict], stats: dict | Non
     if provider == "openrouter":
         return _stream_openai_compat(
             OPENROUTER_URL, key, _model("openrouter"), messages,
-            extra_headers={"HTTP-Referer": os.environ.get("SITE_PUBLIC_URL", "https://harshil-os.dev"), "X-Title": "Harshil/OS Assistant"},
+            extra_headers={"HTTP-Referer": os.environ.get("SITE_PUBLIC_URL", "https://harshiljain.online"), "X-Title": "Harshil/OS Assistant"},
             stats=stats,
         )
     if provider == "gemini":
@@ -477,7 +477,7 @@ async def probe_provider(provider: str, key: str) -> tuple[bool, str]:
                 url = OPENROUTER_URL if provider == "openrouter" else OPENAI_URL
                 headers = {"Authorization": f"Bearer {key}", "content-type": "application/json"}
                 if provider == "openrouter":
-                    headers.update({"HTTP-Referer": os.environ.get("SITE_PUBLIC_URL", "https://harshil-os.dev"), "X-Title": "Harshil/OS Assistant"})
+                    headers.update({"HTTP-Referer": os.environ.get("SITE_PUBLIC_URL", "https://harshiljain.online"), "X-Title": "Harshil/OS Assistant"})
                 r = await client.post(url, json={"model": model, "max_tokens": 1, "messages": [{"role": "user", "content": "ping"}]}, headers=headers)
             elif provider == "anthropic":
                 r = await client.post(ANTHROPIC_URL, json={"model": model, "max_tokens": 1, "messages": [{"role": "user", "content": "ping"}]},
